@@ -7,3 +7,5 @@ deploy:
   api_key: $GITHUB_TOKEN
   file: "dist/ticktick*.zip"
   skip_cleanup: true
+  on:
+    tags: true
