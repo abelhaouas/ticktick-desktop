@@ -50,7 +50,13 @@
       "browser"
     ],
     "rules": {
-      "import/no-extraneous-dependencies": 0
+      "import/no-extraneous-dependencies": 0,
+      "prefer-destructuring": ["error", {
+        "array": true,
+        "object": false
+      }, {
+        "enforceForRenamedProperties": false
+      }]      
     }
   }
 }

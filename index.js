@@ -2,11 +2,11 @@
 const path = require('path');
 const fs = require('fs');
 const electron = require('electron');
-const config = require('./config')
-const env = require('./env')
+const config = require('./config');
+const env = require('./env');
 
 const app = electron.app;
-console.log(app.getName())
+
 require('electron-debug')();
 require('electron-dl')();
 require('electron-context-menu')();
@@ -38,7 +38,6 @@ function createMainWindow() {
     win.setSheetOffset(40);
   }
 
-  console.log(env.url)
   win.loadURL(env.url);
   win.on('close', e => {
     if (isQuitting) {
@@ -111,8 +110,7 @@ app.on('ready', () => {
       {label: 'Paste', accelerator: 'CmdOrCtrl+V', selector: 'paste:'},
       {label: 'Select All', accelerator: 'CmdOrCtrl+A', selector: 'selectAll:'}
     ]
-  }
-  ];
+  }];
 
   electron.Menu.setApplicationMenu(electron.Menu.buildFromTemplate(template));
 });

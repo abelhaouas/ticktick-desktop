@@ -1,1 +1,1 @@
-exports.url = 'https://www.ticktick.com'
+exports.url = 'https://www.ticktick.com';

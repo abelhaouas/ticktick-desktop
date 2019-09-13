@@ -3,6 +3,6 @@ const Store = require('electron-store');
 
 module.exports = new Store({
   defaults: {
-    windowBounds: { width: 800, height: 600 }
+    windowBounds: {width: 800, height: 600}
   }
 });
