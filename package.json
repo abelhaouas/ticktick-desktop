@@ -23,7 +23,9 @@
   },
   "files": [
     "index.js",
-    "browser.css"
+    "browser.css",
+    "static/Icon.png",
+    "static/Icon.ico"
   ],
   "keywords": [
     "electron-app",

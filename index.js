@@ -19,6 +19,7 @@ function createMainWindow() {
   const win = new electron.BrowserWindow({
     title: app.getName(),
     show: false,
+    icon: process.platform === 'linux' && path.join(__dirname, 'static', 'Icon.png'),
     x: windowBounds.x,
     y: windowBounds.y,
     width: windowBounds.width,
