@@ -13,7 +13,6 @@ matrix:
     script: npm run-script build:linux
 
   - os: windows
-    env: TARGET=x86_64-pc-windows-msvc
     script: npm run-script build:windows
 
 before_install: true
