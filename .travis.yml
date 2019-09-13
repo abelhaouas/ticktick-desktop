@@ -1,11 +1,9 @@
 language: node_js
 node_js:
 - '8.9.4'
-before_deploy: "npm run-script build:linux"
+before_deploy: "npm run-script build:linux && ls dist/ticktick-*.zip"
 deploy:
   provider: releases
   api_key: $GITHUB_TOKEN
-  file: "dist/*.zip"
+  file: "dist/ticktick*.zip"
   skip_cleanup: true
-  on:
-    tags: true
