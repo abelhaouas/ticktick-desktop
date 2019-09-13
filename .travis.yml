@@ -1,4 +1,7 @@
 language: node_js
+ cache:
+    directories:
+     - dist/
 node_js:
 - '8.9.4'
 before_deploy: "npm run-script build:linux && ls dist/ticktick-*.zip"
