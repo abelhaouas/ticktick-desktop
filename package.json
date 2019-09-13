@@ -19,7 +19,7 @@
     "start": "electron .",
     "build": "npm run build:linux && npm run build:windows",
     "build:linux": "electron-packager . --overwrite --out=dist --ignore='^media$' --prune --platform=linux --arch=x64 --icon=static/Icon.png --app-bundle-id=com.hawaslab.ticktick-desktop --app-version=$npm_package_version && cd dist/ticktick-linux-x64/ && zip -ryq9 ../ticktick-linux-${npm_package_version}.zip *",
-    "build:windows": "electron-packager . --overwrite --asar --out=dist --ignore='^media$' --prune --platform=win64 --arch=x64 --icon=static/Icon.ico --version-string.ProductName=TickTick --app-version=$npm_package_version && cd dist/ticktick-win64-x64 && zip -ryq9 ../ticktick-windows-${npm_package_version}.zip *"
+    "build:windows": "electron-packager . --overwrite --asar --out=dist --ignore='^media$' --prune --platform=win32 --arch=x64 --icon=static/Icon.ico --version-string.ProductName=TickTick --app-version=$npm_package_version && cd dist/ticktick-win64-x64 && zip -ryq9 ../ticktick-windows-${npm_package_version}.zip *"
   },
   "files": [
     "index.js",
