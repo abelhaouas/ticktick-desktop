@@ -1,0 +1,54 @@
+{
+  "name": "ticktick-desktop",
+  "productName": "ticktick",
+  "desktopName": "ticktick",
+  "version": "0.0.1",
+  "description": "Unofficial TickTick desktop app",
+  "license": "MIT",
+  "repository": "hawasLab/ticktick-desktop",
+  "author": {
+    "name": "Abderrahmane Belhaouas",
+    "email": "abelhaouas@gmail.com"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "electronVersion": "6.0.9",
+  "scripts": {
+    "test": "xo --space",
+    "start": "electron .",
+    "build": "npm run build:linux && npm run build:windows",
+    "build:linux": "electron-packager . --overwrite --out=dist --ignore='^media$' --prune --platform=linux --arch=x64 --icon=static/Icon.png --app-bundle-id=com.hawaslab.ticktick-desktop --app-version=$npm_package_version && cd dist/ticktick-linux-x64/ && zip -ryq9 ../ticktick-linux-${npm_package_version}.zip *",
+    "build:windows": "electron-packager . --overwrite --asar --out=dist --ignore='^media$' --prune --platform=win32 --arch=ia32 --icon=static/Icon.ico --version-string.ProductName=$npm_package_productName --app-version=$npm_package_version && cd dist/ticktick-win32-ia32 && zip -ryq9 ../ticktick-windows-${npm_package_version}.zip *"
+  },
+  "files": [
+    "index.js",
+    "browser.css"
+  ],
+  "keywords": [
+    "electron-app",
+    "ticktick",
+    "ticktick client"
+  ],
+  "dependencies": {
+    "electron-store": "^5.0.0",
+    "electron-context-menu": "^0.15.0",
+    "electron-debug": "^3.0.1",
+    "electron-dl": "^1.14.0"
+  },
+  "devDependencies": {
+    "electron-packager": "^14.0.6",
+    "electron": "^6.0.9",
+    "xo": "*"
+  },
+  "xo": {
+    "esnext": true,
+    "envs": [
+      "node",
+      "browser"
+    ],
+    "rules": {
+      "import/no-extraneous-dependencies": 0
+    }
+  }
+}
