@@ -1,12 +1,29 @@
 language: node_js
 node_js:
 - '8.9.4'
-script:
-  - npm run-script build:linux && ls dist/ticktick-*.zip
+
+cache:
+  directories:
+  - dist/
+
+matrix:
+  include:
+  # Linux
+  - os: linux
+    script: npm run-script build:linux
+
+  - os: windows
+    language: rust
+    env: TARGET=x86_64-pc-windows-msvc
+    script: npm run-script build:windows
+
+before_install: true
+
 deploy:
   provider: releases
   api_key: $GITHUB_TOKEN
-  file: "dist/ticktick*.zip"
+  file_glob: true
+  file: dist/ticktick*.zip
   skip_cleanup: true
   on:
     tags: true
