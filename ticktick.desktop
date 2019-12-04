@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=TickTick
+Icon=ticktick
+Exec=/opt/ticktick/ticktick %U
+Terminal=false
+Categories=Calendar;task;
