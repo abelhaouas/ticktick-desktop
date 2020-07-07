@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "electron-packager": "^14.0.6",
-    "electron": "^6.0.9",
+    "electron": "^9.1.0",
     "xo": "*"
   },
   "xo": {
